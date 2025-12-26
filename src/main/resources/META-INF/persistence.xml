@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+    <persistence-unit name="CentroFisioPU">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- Clase(s) de entidades -->
+        <class>com.joel.centrofisioterapeuta.logica.Usuario</class>
+        <class>com.joel.centrofisioterapeuta.logica.Fisioterapeuta</class>
+        <class>com.joel.centrofisioterapeuta.logica.Horario</class>
+        <class>com.joel.centrofisioterapeuta.logica.Paciente</class>
+        <class>com.joel.centrofisioterapeuta.logica.Recepcionista</class>
+        <class>com.joel.centrofisioterapeuta.logica.Responsable</class>
+        <class>com.joel.centrofisioterapeuta.logica.Turno</class>
+
+
+        <properties>
+
+            <!-- Configuración de Hibernate -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/> <!-- Para actualizar la DB automáticamente -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <!-- Configuración de la conexión -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/centro_fisioterapia"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="admin"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+        </properties>
+    </persistence-unit>
+</persistence>
